@@ -14,6 +14,12 @@ public class HomeServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		String number = request.getParameter("number");
+		
+		int result = Integer.parseInt(number) * 5;
+		
+		request.setAttribute("result" , result);
+		
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/index.jsp");
 		requestDispatcher.forward(request, response);
 
