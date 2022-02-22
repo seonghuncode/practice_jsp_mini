@@ -7,10 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1> servlet 으로 부터 길행된 jsp</h1>
+	<h1> ${result} 단</h1>
 	
 	<p>
-		보내주신 값에 5를 곱하면 <%=request.getAttribute("result")%>
+		 <%
+		 int number = (int)request.getAttribute("result");//사용자가 입력한 값을 받아와 int로 형변환
+		 
+		 for(int i = 1; i <=9; i++){%>
+		 <p><%= number%> * <%= i%> = <%= number * i%></p>
+		 <% }%>
 	</p>
 	
 </body>
